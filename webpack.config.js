@@ -4,7 +4,7 @@ module.exports = {
     mode: "development",
 
     // メインとなるJavaScriptファイル（エントリーポイント）
-    entry: "./src/tsx/index.tsx",
+    entry: "./src/index.tsx",
     // ファイルの出力設定
     output: {
         //  出力ファイルのディレクトリ名
@@ -19,6 +19,10 @@ module.exports = {
                 test: /\.tsx?$/,
                 // TypeScript をコンパイルする
                 use: "ts-loader"
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
             }
         ]
     },
